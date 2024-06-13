@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "A328_SPI_PIO",
+			"path": ".."
+		},
+		{
+			"path": "../../A328_SPI_Master_PIO"
+		}
+	],
+	"settings": {}
+}
