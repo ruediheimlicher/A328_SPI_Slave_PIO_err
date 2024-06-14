@@ -21,6 +21,8 @@
 #include "OLED_Driver.h"
 #include "DEV_Config.h"
 
+#include <U8x8lib.h>
+#include "u8g2lib.h"
 
 #define LOOPLEDPORT		PORTD
 #define LOOPLEDDDR		DDRD
@@ -55,7 +57,7 @@ uint16_t loopcount0=0;
     uint16_t loopcount1=0;
     uint16_t loopcount2=0;
 
-
+// U8X8_SSD1327_WS_128X128_HW_I2C(A5,A6);
 
 
 
