@@ -18,7 +18,7 @@
 #include "adc.c"
 
 // 
-#include "OLED_Driver.h"
+//#include "OLED_Driver.h"
 #include "DEV_Config.h"
 
 #include <U8x8lib.h>
@@ -57,7 +57,7 @@ uint16_t loopcount0=0;
     uint16_t loopcount1=0;
     uint16_t loopcount2=0;
 
-// U8X8_SSD1327_WS_128X128_HW_I2C(A5,A6);
+ U8X8_SSD1327_WS_128X128_HW_I2C u8x8(A5,A6);
 
 
 
@@ -209,7 +209,7 @@ int main (void)
 	  _delay_ms(1000);
 	 
 	 Init_Slave_IntContr();
-	 System_Init();
+	 //System_Init();
   //Serial.print(F("OLED_Init()...\r\n"));
 	lcd_puts(" OLED");
   //OLED_1in5_Init();
