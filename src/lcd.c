@@ -342,7 +342,7 @@ Returns:  none
 void lcd_puts(const char *s)
 /* print string on lcd (no auto linefeed) */
 {
-    register char c;
+    char c;
 
     while ( (c = *s++) ) {
         lcd_putc(c);
@@ -668,9 +668,9 @@ void lcd_put_zeit(uint8_t minuten, uint8_t stunden)
 
 void lcd_put_wochentag(uint8_t wd)
 {
-	char* wochentag[] = {"MO","DI","MI","DO","FR","SA","SO"};
+	//char* wochentag[] = {"MO","DI","MI","DO","FR","SA","SO"};
 
-	lcd_puts(wochentag[wd-1]);	// Array wochentag ist null-basiert
+	//lcd_puts(wochentag[wd-1]);	// Array wochentag ist null-basiert
 }
 
 void lcd_put_temperatur(uint16_t temperatur)

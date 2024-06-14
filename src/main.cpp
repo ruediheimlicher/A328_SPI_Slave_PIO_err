@@ -5,6 +5,7 @@
 
 //#include <avr/pgmspace.h>
 //#include <avr/sleep.h>
+#include <Wire.h>
 #include <avr/eeprom.h>
 #include <inttypes.h>
 #include <avr/eeprom.h>
@@ -18,11 +19,11 @@
 #include "adc.c"
 
 // 
-//#include "OLED_Driver.h"
+#include "OLED_Driver.h"
 #include "DEV_Config.h"
 
-#include <U8x8lib.h>
-#include "u8g2lib.h"
+//#include <U8x8lib.h>
+//#include "u8g2lib.h"
 
 #define LOOPLEDPORT		PORTD
 #define LOOPLEDDDR		DDRD
@@ -54,10 +55,10 @@ volatile uint8_t spistatus = 0;
 
 
 uint16_t loopcount0=0;
-    uint16_t loopcount1=0;
-    uint16_t loopcount2=0;
+uint16_t loopcount1=0;
+uint16_t loopcount2=0;
 
- U8X8_SSD1327_WS_128X128_HW_I2C u8x8(A5,A6);
+// U8X8_SSD1327_EA_W128128_HW_I2C u8x8(U8X8_PIN_NONE,A5,A6);
 
 
 
@@ -209,12 +210,12 @@ int main (void)
 	  _delay_ms(1000);
 	 
 	 Init_Slave_IntContr();
-	 //System_Init();
+	 System_Init();
   //Serial.print(F("OLED_Init()...\r\n"));
 	lcd_puts(" OLED");
-  //OLED_1in5_Init();
- // _delay_ms(500); 
-  //OLED_1in5_Clear();  
+  OLED_1in5_Init();
+  _delay_ms(500); 
+  OLED_1in5_Clear();  
 
     uint8_t Tastenwert=0;
     uint8_t TastaturCount=0;
@@ -240,7 +241,7 @@ int main (void)
  // _delay_ms(500); 
  // OLED_1in5_Clear();  
 
- 
+ //u8x8.begin();
  
 	   //timer2();
 
