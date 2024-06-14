@@ -18,11 +18,9 @@
 #include "adc.c"
 
 // 
-//#include "OLED_Driver.h"
-//#include "DEV_Config.h"
+#include "OLED_Driver.h"
+#include "DEV_Config.h"
 
-#include <U8x8lib.h>
-#include "u8g2lib.h"
 
 #define LOOPLEDPORT		PORTD
 #define LOOPLEDDDR		DDRD
@@ -58,7 +56,7 @@ uint16_t loopcount0=0;
     uint16_t loopcount2=0;
 
 
-U8X8_SSD1327_WS_128X128_HW_I2C u8x8(A4,A5);
+
 
 
 
@@ -208,8 +206,8 @@ int main (void)
  		//lcd_puts("Guten Tag");
 	  _delay_ms(1000);
 	 
-	 //Init_Slave_IntContr();
-	 //System_Init();
+	 Init_Slave_IntContr();
+	 System_Init();
   //Serial.print(F("OLED_Init()...\r\n"));
 	lcd_puts(" OLED");
   //OLED_1in5_Init();
@@ -233,7 +231,7 @@ int main (void)
 
     //uint8_t twierrcount=0;
     //LOOPLEDPORT |=(1<<LOOPLED);
-		//	 System_Init();
+			 System_Init();
   //Serial.print(F("OLED_Init()...\r\n"));
 	//lcd_puts("OLED_Init");
  // OLED_1in5_Init();
@@ -247,8 +245,6 @@ int main (void)
 		 DDRB |= (1<<6);
 		 DDRB |= (1<<7);
    
-	 //u8x8.begin();
-
 	while (1)
 	{
       //PORTD ^= (1<<0);
@@ -280,19 +276,16 @@ int main (void)
       loopcount1++;
       if(loopcount1 > 0x1F)
          {
-					PORTB ^= (1<<6);
             LOOPLEDPORT ^=(1<<LOOPLED);
             loopcount1 = 0;
             loopcount2++;
-            lcd_gotoxy(10,1);
-            lcd_putint16(loopcount2);
+            //lcd_gotoxy(10,1);
+            //lcd_putint16(loopcount2);
 						//lcd_putc(' ');
 						//lcd_putint(incoming[received]);
 						//lcd_putc(' ');
 						//lcd_putint(received);
 						//lcd_putc('*');
-						//u8x8.setFont(u8x8_font_chroma48medium8_r);
-  					//u8x8.drawString(0,1,"Hello World!");
 
          }
 		}
