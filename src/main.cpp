@@ -234,9 +234,9 @@ int main (void)
 			 System_Init();
   //Serial.print(F("OLED_Init()...\r\n"));
 	//lcd_puts("OLED_Init");
- // OLED_1in5_Init();
- // _delay_ms(500); 
- // OLED_1in5_Clear();  
+ 		// OLED_1in5_Init();
+ 		// _delay_ms(500); 
+ 	// OLED_1in5_Clear();  
 
  
  
